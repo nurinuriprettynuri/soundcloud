@@ -40,50 +40,46 @@ class SignupForm extends React.Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          Welcome to Sound Cloud! <br />
-          Please {this.props.formType} or {this.props.navLink}
-          <div onClick={this.props.closeModal} className="close-x">
-            X
-          </div>
           {this.renderErrors()}
-          <div>
+          <div className="modal-form-container">
             <br />
-            <label>
-              Email:
-              <input
-                type="text"
-                value={this.state.email}
-                onChange={this.update("email")}
-              />
-            </label>
-            <label>
-              Username:
-              <input
-                type="text"
-                value={this.state.username}
-                onChange={this.update("username")}
-              />
-            </label>
-            <label>
-              Location:
-              <input
-                type="text"
-                value={this.state.location}
-                onChange={this.update("location")}
-              />
-            </label>
+            <input
+              className="textInput"
+              type="text"
+              value={this.state.email}
+              onChange={this.update("email")}
+              placeholder="Your email address"
+            />
             <br />
-            <label>
-              Password:
-              <input
-                type="password"
-                value={this.state.password}
-                onChange={this.update("password")}
-                className="login-input"
-              />
-            </label>
+            <input
+              className="textInput"
+              type="text"
+              value={this.state.username}
+              onChange={this.update("username")}
+              placeholder="Your username"
+            />
             <br />
-            <input type="submit" value={this.props.formType} />
+            <input
+              className="textInput"
+              type="text"
+              value={this.state.location}
+              onChange={this.update("location")}
+              placeholder="Your location"
+            />
+            <br />
+            <input
+              className="textInput"
+              type="password"
+              value={this.state.password}
+              onChange={this.update("password")}
+              placeholder="Your Password"
+            />
+            <br />
+            <input
+              type="submit"
+              value={this.props.formType}
+              className="submitButton"
+            />
           </div>
         </form>
       </div>

@@ -9,6 +9,7 @@ class LoginForm extends React.Component {
       password: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demoUserLogIn = this.demoUserLogIn.bind(this);
   }
 
   update(field) {
@@ -24,6 +25,16 @@ class LoginForm extends React.Component {
     this.props.processForm(user).then(this.props.closeModal);
   }
 
+  demoUserLogIn() {
+    this.setState(
+      { email: "aliglaser@gmail.com", password: "123456789" },
+      () => {
+        this.props.login(this.state);
+        this.props.history.push("/");
+      }
+    );
+  }
+
   renderErrors() {
     return (
       <ul>
@@ -36,40 +47,30 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div className="login-form-container">
-        <form onSubmit={this.handleSubmit} className="login-form-box">
-          Welcome to SoundCloud
-          <br />
-          Please {this.props.formType} or {this.props.navLink}
-          <div onClick={this.props.closeModal} className="close-x">
-            X
-          </div>
+      <div>
+        <form onSubmit={this.handleSubmit}>
           {this.renderErrors()}
-          <div className="login-form">
-            <br />
-            <label>
-              Email:
-              <input
-                type="text"
-                value={this.state.email}
-                onChange={this.update("email")}
-                className="login-input"
-              />
-            </label>
-            <br />
-            <label>
-              Password:
-              <input
-                type="password"
-                value={this.state.password}
-                onChange={this.update("password")}
-                className="login-input"
-              />
-            </label>
+          <div className="modal-form-container">
             <br />
             <input
-              className="session-submit"
+              type="text"
+              className="textInput"
+              value={this.state.email}
+              onChange={this.update("email")}
+              placeholder="Your email address"
+            />
+            <br />
+            <input
+              type="password"
+              className="textInput"
+              value={this.state.password}
+              onChange={this.update("password")}
+              placeholder="Your password"
+            />
+            <br />
+            <input
               type="submit"
+              className="submitButton"
               value={this.props.formType}
             />
           </div>

@@ -13,4 +13,46 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  -webkit-animation: animateTop 0.4s;
+  animation: animateTop 0.4s;
+}
+
+@keyframes animateTop {
+  from {
+    margin-top: -200%;
+  }
+
+  to {
+    margin-top: 5%;
+  }
+}
+
+@-webkit-keyframes animateTop {
+  from {
+    margin-top: -200%;
+  }
+
+  to {
+    margin-top: 5%;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }

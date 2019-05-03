@@ -1,0 +1,84 @@
+.main_header {
+  height: 600px;
+  background-image: image-url("mainimg.png");
+  width: 95%;
+  margin: 0 auto;
+}
+
+.modal-form-container {
+  background-color: white;
+  margin: 0 auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid rgb(243, 219, 219);
+  width: 400px; /* Could be more or less, depending on screen size */
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.textInput {
+  display: flex;
+  width: 96%;
+  height: 30px;
+  margin-right: 5px;
+  margin: 2px auto;
+  border-radius: 4px;
+  font-size: 20px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  padding: 5px;
+}
+
+.submitButton {
+  width: 100%;
+  height: 40px;
+  margin: 2px auto;
+  background-color: #ff7802;
+  border-radius: 4px;
+  font-size: 20px;
+}
+
+.session_bar {
+  box-sizing: border-box;
+  padding-left: 10px;
+  padding-right: 10px;
+  align-items: center;
+  width: 100%;
+  height: 80px;
+  background-color: #b649ff;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sc_logo {
+  width: 65px;
+  height: 40px;
+  margin: 6px;
+}
+
+.signupButton,
+.signinButton {
+  width: 150px;
+  height: 40px;
+  padding: 5px;
+  margin: 5px 5px;
+  font-size: 15px;
+  opacity: 0%;
+  border-radius: 8px;
+  background-color: #ff7802;
+  color: white;
+  border-color: #ff7802;
+}
+
+.signinButton {
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: 2px solid white;
+}
+
+.login-signup {
+  display: flex;
+}
