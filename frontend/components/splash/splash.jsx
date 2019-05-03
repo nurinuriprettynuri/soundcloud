@@ -8,13 +8,25 @@ export default class Splash extends React.Component {
   }
 
   render() {
-    return (
-      <div className="main_header">
-        <div className="session_bar">
+    let beforeSessionSplash = () => (
+      <div className="before_main_header">
+        <div className="before_session_bar">
           <img src="sc_logo.png" alt="soundcloud" className="sc_logo" />
           <SessionButtonContainer />
         </div>
       </div>
     );
+    let afterSessionSplash = () => (
+      <div className="after_main_header">
+        <div className="after_session_bar">
+          <img src="sc_logo.png" alt="soundcloud" className="sc_logo" />
+          <SessionButtonContainer />
+        </div>
+      </div>
+    );
+
+    return this.props.currentUser
+      ? afterSessionSplash()
+      : beforeSessionSplash();
   }
 }
