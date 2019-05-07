@@ -38,10 +38,10 @@ class SignupForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="modal-form-container">
         <form onSubmit={this.handleSubmit}>
           {this.renderErrors()}
-          <div className="modal-form-container">
+          <div>
             <br />
             <input
               className="textInput"

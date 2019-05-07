@@ -16,11 +16,16 @@ const SessionButton = ({ currentUser, logout, openModal, login }) => {
     </div>
   );
   const afterSessionLinks = () => (
-    <hgroup className="header-group">
-      <button onClick={logout} className="signinButton">
-        Log out
-      </button>
-    </hgroup>
+    <div className="after_main_header">
+      <div className="after_session_bar">
+        <img src="sc_logo.png" alt="soundcloud" className="sc_logo" />
+        <hgroup className="header-group">
+          <button onClick={logout} className="signinButton">
+            Log out
+          </button>
+        </hgroup>
+      </div>
+    </div>
   );
 
   return currentUser ? afterSessionLinks() : beforeSessionLinks();

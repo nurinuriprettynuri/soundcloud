@@ -3,10 +3,11 @@
   background-image: image-url("sc_main.png");
   width: 95%;
   margin: 0 auto;
+  // display: flex;
+  // justify-content: center;
 }
 
 .after_main_header {
-  height: 500px;
   width: 95%;
   margin: 0 auto;
 }
@@ -41,7 +42,7 @@
   width: 100%;
   height: 40px;
   margin: 2px auto;
-  background-color: #ff7802;
+  background-color: #ff5500;
   border-radius: 4px;
   font-size: 20px;
 }
@@ -80,23 +81,87 @@
 .signupButton,
 .signinButton {
   width: 150px;
-  height: 40px;
-  padding: 5px;
-  margin: 5px 5px;
+  height: 30px;
+  padding: 2px;
+  margin: 7px 7px;
   font-size: 15px;
   opacity: 0%;
-  border-radius: 8px;
+  border-radius: 5px;
   background-color: #ff7802;
-  color: white;
+  color: #fff;
   border-color: #ff7802;
+  vertical-align: middle;
+}
+
+.signinButton:hover {
+  cursor: pointer;
+  border-color: #fff;
+  color: #fff;
+}
+
+.signupButton:hover {
+  cursor: pointer;
 }
 
 .signinButton {
+  width: 100px;
   background-color: Transparent;
   background-repeat: no-repeat;
-  border: 2px solid white;
+  border: 1px solid rgb(212, 211, 211);
+  color: rgb(212, 211, 211);
 }
 
 .login-signup {
   display: flex;
+}
+
+.before_session_main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 150px;
+}
+
+.front_title {
+  margin-bottom: 9px;
+  font-size: 36px;
+  font-weight: 100;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: #fff;
+}
+
+.front_semi_title {
+  font-size: 18px;
+  text-align: center;
+  font-family: "Interstate", "Lucida Grande", "Lucida Sans Unicode",
+    "Lucida Sans", Garuda, Verdana, Tahoma, sans-serif;
+  font-weight: 100;
+  color: #fff;
+  margin: 10px;
+  line-height: 25px;
+}
+
+.buttons {
+  top: 60px;
+}
+
+.free_trial_button {
+  width: 200px;
+  height: 40px;
+  padding: 2px;
+  margin: 7px 7px;
+  font-size: 15px;
+  opacity: 0%;
+  border-radius: 5px;
+  background-color: #ff7802;
+  color: white;
+  border-color: #ff7802;
+  vertical-align: middle;
+}
+
+.free_trial_button:hover {
+  cursor: pointer;
 }
