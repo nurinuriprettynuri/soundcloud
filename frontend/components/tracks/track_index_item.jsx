@@ -13,7 +13,7 @@ const TrackIndexItem = props => {
       <Link to={`/tracks/${props.track.id}`}>
         <img className="track_img" src={props.track.imageUrl} />
       </Link>
-      <p className="track_index_title">{props.track.title}</p>
+      <div className="track_index_title">{props.track.title}</div>
       {tag}
     </div>
   );

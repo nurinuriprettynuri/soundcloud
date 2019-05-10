@@ -60,7 +60,9 @@ class TrackShow extends React.Component {
                 </button>
               </div>
               <div className="track_title">
-                <span className="track_exp">{this.props.artist.username}</span>
+                <span className="track_exp username">
+                  <strong>{this.props.artist.username}</strong>
+                </span>
                 <span className="track_exp artist">
                   {this.props.track.title}
                 </span>

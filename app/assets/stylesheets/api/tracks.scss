@@ -195,6 +195,10 @@ label {
   color: #f55;
 }
 
+.play-button:focus {
+  outline: none;
+}
+
 .play-button-div {
   padding: 20px 10px 10px 10px;
 }
@@ -208,7 +212,6 @@ label {
 }
 
 .track_exp {
-  background-color: black;
   color: white;
   margin: 3px;
   padding: 2px 7px 3px;
@@ -216,6 +219,16 @@ label {
 
 .artist {
   font-size: 40px;
+  background-color: black;
+}
+
+.username {
+  background-color: none;
+
+  strong {
+    background-color: black;
+    padding: 0 2px;
+  }
 }
 
 .track-submit-button {
@@ -237,6 +250,10 @@ label {
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   font-size: 16px;
   margin: 1px 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 180px;
+  white-space: nowrap;
 }
 
 .track_index_genre {
