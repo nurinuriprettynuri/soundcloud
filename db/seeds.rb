@@ -50,10 +50,10 @@ track5 = Track.create({title:"Souvlaki Space Station", artist_id: 4, tag_id: 6})
 track6 = Track.create({title:"There Is A Light That Never Goes Out", artist_id: 5, tag_id: 3})
 
 
-track1.audio.attach(io: open('https://s3-us-west-1.amazonaws.com/soundcloud-dev/01+Feather+(feat.+Cise+Starr+%26+Akin).mp3'), filename: 'feather.mp3')
-track2.audio.attach(io: open('https://s3-us-west-1.amazonaws.com/soundcloud-dev/01+Machu+Picchu.mp3'), filename: 'machu pichu.mp3')
-track3.audio.attach(io: open('https://s3-us-west-1.amazonaws.com/soundcloud-dev/03+Nocturne.mp3'), filename: 'nocturne.mp3')
-track4.audio.attach(io: open('https://s3-us-west-1.amazonaws.com/soundcloud-dev/04+If+I+Ever+Feel+Better.mp3'), filename: 'If I ever feel better.mp3')
+track1.audio.attach(io: open('https://s3-us-west-1.amazonaws.com/soundcloud-dev/01+Feather+(feat.+Cise+Starr+%26+Akin).mp3', filename: 'feather.mp3')
+track2.audio.attach(io: open('https://s3-us-west-1.amazonaws.com/soundcloud-dev/01+Machu+Picchu.mp3', filename: 'machu pichu.mp3')
+track3.audio.attach(io: open('https://s3-us-west-1.amazonaws.com/soundcloud-dev/03+Nocturne.mp3', filename: 'nocturne.mp3')
+track4.audio.attach(io: open('https://s3-us-west-1.amazonaws.com/soundcloud-dev/04+If+I+Ever+Feel+Better.mp3', filename: 'If I ever feel better.mp3')
 track5.audio.attach(io: open('https://s3-us-west-1.amazonaws.com/soundcloud-dev/06+Souvlaki+Space+Station.mp3', filename: 'Souvlaki Space Station')
 track6.audio.attach(io: open('https://s3-us-west-1.amazonaws.com/soundcloud-dev/13+There+Is+A+Light+That+Never+Goes+Out.mp3', filename: 'There Is A Light That Never Goes Out')
 
