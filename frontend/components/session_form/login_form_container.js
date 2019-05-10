@@ -3,8 +3,9 @@ import React from "react";
 import { login } from "../../actions/session_actions";
 import { openModal, closeModal } from "../../actions/modal_actions";
 import LoginForm from "./login_form";
+import { withRouter } from "react-router";
 
-const mapStateToProps = ({ errors }) => {
+const mapStateToProps = ({ errors }, ownProps) => {
   return {
     errors: errors.session,
     formType: "login"
@@ -21,7 +22,9 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(LoginForm);
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(LoginForm)
+);

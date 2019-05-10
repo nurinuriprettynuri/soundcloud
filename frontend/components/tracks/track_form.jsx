@@ -4,6 +4,11 @@ import SessionButtonContainer from "../session_button/session_button_container";
 class TrackForm extends React.Component {
   componentDidMount() {
     this.props.fetchAllTags();
+    if (this.props.formType === "Update Form") {
+      this.props
+        .fetchTrack(this.props.match.params.trackId)
+        .then(() => this.setState(this.props.track));
+    }
   }
 
   constructor(props) {
@@ -20,7 +25,8 @@ class TrackForm extends React.Component {
     const fileReader = new FileReader();
     fileReader.onloadend = () => {
       this.setState({
-        image: image
+        image: image,
+        imageUrl: fileReader.result
       });
     };
     if (image) {
@@ -50,54 +56,84 @@ class TrackForm extends React.Component {
     const formData = new FormData();
     formData.append("track[title]", this.state.title);
     formData.append("track[artist_id]", this.state.artist_id);
-    formData.append("track[image]", this.state.image);
-    formData.append("track[audio]", this.state.audio);
     formData.append("track[tag_id]", this.state.tag_id);
-    this.props.action(formData).then(res => this.props.history.push("/tracks"));
+    if (this.state.image) {
+      formData.append("track[image]", this.state.image);
+    }
+    if (this.state.audio) {
+      formData.append("track[audio]", this.state.audio);
+    }
+    this.props
+      .action(formData, this.props.track.id)
+      .then(res => this.props.history.push("/tracks"));
   }
 
   render() {
     return (
       <>
         <SessionButtonContainer />
-        <div className="track-form-container">
-          <form onSubmit={this.handleSubmit}>
-            <h2>{this.props.formType}</h2>
-            <div>
-              <div className="song-form-left">
-                <p>Image preview:</p>
-                <img className="form-img-preview" src={this.state.image} />
-                <input type="file" onChange={this.handleAudioFile} />
-                <input type="file" onChange={this.handleImageFile} />
-              </div>
-              <div className="song-form-right">
-                <label>
-                  Title
-                  <input
-                    type="text"
-                    value={this.state.title}
-                    onChange={this.update("title")}
-                    placeholder="Name your track"
+        <div className="index-container">
+          <div className="track-form-container">
+            <form onSubmit={this.handleSubmit} class="track-form">
+              <p className="form-type">{this.props.formType}</p>
+              <div className="track-form-columns">
+                <div className="track-form-left">
+                  <img
+                    className="track-img-preview"
+                    src={this.state.imageUrl}
                   />
-                </label>
-                <label>
-                  Genre
-                  <select
-                    onChange={this.update("tag_id")}
-                    value={this.state.tag_id}
-                  >
-                    {this.props.tags.map(tag => (
-                      <option key={Math.random()} value={tag.id}>
-                        {tag.title}
-                      </option>
-                    ))}
-                  </select>
-                </label>
+                  <p className="track-para">Image:</p>
+                  <br />
+                  <input
+                    className="track-para"
+                    type="file"
+                    onChange={this.handleImageFile}
+                  />
+                  <p className="track-para">Audio:</p>
+                  <br />
+                  <input
+                    className="track-para"
+                    type="file"
+                    onChange={this.handleAudioFile}
+                  />
+                </div>
+                <div className="track-form-right">
+                  <label className="track-para">
+                    Title
+                    <br />
+                    <input
+                      className="track-form-input"
+                      type="text"
+                      value={this.state.title}
+                      onChange={this.update("title")}
+                      placeholder="Name your track"
+                    />
+                  </label>
+                  <label className="track-para">
+                    Genre
+                    <br />
+                    <select
+                      className="select-box"
+                      onChange={this.update("tag_id")}
+                      value={this.state.tag_id}
+                    >
+                      <option />
+                      {this.props.tags.map(tag => (
+                        <option key={Math.random()} value={tag.id}>
+                          {tag.title}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
+                  <input
+                    type="submit"
+                    value="Upload"
+                    className="track-submit-button"
+                  />
+                </div>
               </div>
-            </div>
-
-            <input type="submit" value="Upload" />
-          </form>
+            </form>
+          </div>
         </div>
       </>
     );

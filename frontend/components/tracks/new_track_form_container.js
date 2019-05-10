@@ -11,6 +11,7 @@ const mapStateToProps = state => {
       artist_id: state.session.id,
       tag_id: "",
       image: null,
+      imageUrl: null,
       audio: null
     },
     formType: "Create Track",

@@ -1,15 +1,16 @@
 .before_main_header {
   height: 500px;
   background-image: image-url("sc_main.png");
-  width: 95%;
+  width: 90%;
   margin: 0 auto;
   // display: flex;
   // justify-content: center;
 }
 
 .after_main_header {
-  width: 95%;
+  width: 100%;
   margin: 0 auto;
+  background-color: #333;
 }
 
 .modal-form-container {
@@ -60,11 +61,12 @@
 }
 
 .after_session_bar {
+  max-width: 1240px;
   box-sizing: border-box;
   padding-left: 10px;
   padding-right: 10px;
   align-items: center;
-  width: 100%;
+  width: 90%;
   height: 46px;
   margin: 0 auto;
   display: flex;
@@ -164,4 +166,9 @@
 
 .free_trial_button:hover {
   cursor: pointer;
+}
+
+.logoutdot {
+  font-size: 24px !important;
+  color: lightgray;
 }

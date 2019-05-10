@@ -46,16 +46,16 @@ export const createTrack = track => dispatch =>
   APIUtil.createTrack(track).then(
     track => dispatch(receiveTrack(track)),
     err => {
-      debugger;
       dispatch(receiveErrors(err.responseJSON));
     }
   );
 
-export const updateTrack = track => dispatch =>
-  APIUtil.updateTrack(track).then(
+export const updateTrack = (track, id) => dispatch => {
+  return APIUtil.updateTrack(track, id).then(
     track => dispatch(receiveTrack(track)),
     err => dispatch(receiveErrors(err.responseJSON))
   );
+};
 
 export const deleteTrack = id => dispatch =>
   APIUtil.deleteTrack(id).then(

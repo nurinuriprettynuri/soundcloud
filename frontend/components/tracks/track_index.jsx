@@ -1,5 +1,6 @@
 import React from "react";
 import TrackIndexItem from "./track_index_item";
+import SessionButtonContainer from "../session_button/session_button_container";
 
 class TrackIndex extends React.Component {
   componentDidMount() {
@@ -11,9 +12,15 @@ class TrackIndex extends React.Component {
       <TrackIndexItem track={track} key={track.id} />
     ));
     return (
-      <div>
-        <ul>{tracks}</ul>
-      </div>
+      <>
+        <SessionButtonContainer />
+        <div className="index-container">
+          <div className="index-button">
+            <div>Overview</div>
+          </div>
+          <div className="inner-index-container">{tracks}</div>
+        </div>
+      </>
     );
   }
 }

@@ -4,11 +4,12 @@ export const fetchAllTracks = () =>
     url: "api/tracks"
   });
 
-export const fetchTrack = id =>
-  $.ajax({
+export const fetchTrack = id => {
+  return $.ajax({
     method: "GET",
     url: `api/tracks/${id}`
   });
+};
 
 export const createTrack = track =>
   $.ajax({
@@ -19,16 +20,20 @@ export const createTrack = track =>
     processData: false
   });
 
-export const updateTrack = track =>
-  $.ajax({
+export const updateTrack = (track, id) => {
+  return $.ajax({
     method: "PATCH",
-    url: `api/tracks/${track.id}`,
-    data: { track }
+    url: `api/tracks/${id}`,
+    data: track,
+    contentType: false,
+    processData: false
   });
+};
+
+// let track = {id:11, title:"111"};
 
 export const deleteTrack = id =>
   $.ajax({
     method: "DELETE",
-    url: `api/tracks/${id}`,
-    data: { track }
+    url: `api/tracks/${id}`
   });
