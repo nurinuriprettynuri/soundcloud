@@ -18,7 +18,6 @@ class TrackShow extends React.Component {
       .then(
         this.setState({ track: this.props.track, artist: this.props.artist })
       );
-    debugger;
   }
 
   // buttonClass() {
@@ -48,6 +47,15 @@ class TrackShow extends React.Component {
     } else {
       image = "ss";
     }
+    let buttonimg;
+    const button =
+      this.props.playbarState.isPlaying &&
+      this.props.track.id === this.props.playbarState.currentTrack.id ? (
+        <img src={window.pausebt} />
+      ) : (
+        <img src={window.playbuttonurl} />
+      );
+
     return (
       <>
         <SessionButtonContainer />
@@ -56,7 +64,7 @@ class TrackShow extends React.Component {
             <div className="track-show-left">
               <div className="play-button-div">
                 <button onClick={this.handlePlayPause} className="play-button">
-                  <img src={window.playbuttonurl} />
+                  {button}
                 </button>
               </div>
               <div className="track_title">

@@ -10,6 +10,7 @@ require 'open-uri'
 
 # ActiveRecord::Base.transaction do
 
+
 User.destroy_all
 Track.destroy_all
 Tag.destroy_all
