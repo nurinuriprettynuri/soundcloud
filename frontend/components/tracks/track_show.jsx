@@ -13,8 +13,12 @@ class TrackShow extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchTrack(this.props.match.params.trackId);
-    this.setState({ track: this.props.track, artist: this.props.artist });
+    this.props
+      .fetchTrack(this.props.match.params.trackId)
+      .then(
+        this.setState({ track: this.props.track, artist: this.props.artist })
+      );
+    debugger;
   }
 
   // buttonClass() {
@@ -32,6 +36,9 @@ class TrackShow extends React.Component {
   }
 
   render() {
+    if (!this.props.artist) {
+      return null;
+    }
     if (!this.props.track) {
       return null;
     }
@@ -66,14 +73,14 @@ class TrackShow extends React.Component {
           <div className="track_show_menu">
             <Link to="#">
               <button className="show_menu_btn">
-                <i class="fa fa-share-square-o" aria-hidden="true" />
+                <i className="fa fa-share-square-o" aria-hidden="true" />
                 Share
               </button>
             </Link>
             <Link to={`/tracks/${this.props.match.params.trackId}/edit`}>
               <button className="show_menu_btn">
                 <i
-                  class="fa fa-pencil-square-o show_menu_ic"
+                  className="fa fa-pencil-square-o show_menu_ic"
                   aria-hidden="true"
                 />
                 Edit
@@ -81,7 +88,7 @@ class TrackShow extends React.Component {
             </Link>
             <Link to="#">
               <button className="show_menu_btn">
-                <i class="fa fa-credit-card" aria-hidden="true" />
+                <i className="fa fa-credit-card" aria-hidden="true" />
                 More
               </button>
             </Link>

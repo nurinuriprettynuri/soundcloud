@@ -11,9 +11,10 @@ export const receiveAllTracks = tracks => ({
   tracks
 });
 
-export const receiveTrack = track => ({
+export const receiveTrack = payload => ({
   type: RECEIVE_TRACK,
-  track
+  track: payload.track,
+  artist: payload.artist
 });
 
 export const removeTrack = track => ({

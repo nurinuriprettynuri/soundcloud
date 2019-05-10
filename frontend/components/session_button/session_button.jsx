@@ -28,7 +28,7 @@ const SessionButton = ({ currentUser, logout, openModal, login, history }) => {
         <img src="sc_logo.png" alt="soundcloud" className="sc_logo" />
         <div className="rightNav">
           <Link to="#">
-            <i class="fa fa-github" aria-hidden="true" />
+            <i className="fa fa-github" aria-hidden="true" />
           </Link>
           <Link
             to="/upload"

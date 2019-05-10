@@ -1,12 +1,12 @@
 class Api::TracksController < ApplicationController
     
     def index
-        @tracks = Track.all
+        @tracks = Track.with_attached_audio.with_attached_image.all
         render "api/tracks/index"
     end
     
     def show
-        @track = Track.find(params[:id])
+        @track = Track.includes(:artist).find(params[:id])
         render "api/tracks/show"
     end
 

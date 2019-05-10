@@ -74,7 +74,7 @@ class TrackForm extends React.Component {
         <SessionButtonContainer />
         <div className="index-container">
           <div className="track-form-container">
-            <form onSubmit={this.handleSubmit} class="track-form">
+            <form onSubmit={this.handleSubmit} className="track-form">
               <p className="form-type">{this.props.formType}</p>
               <div className="track-form-columns">
                 <div className="track-form-left">
