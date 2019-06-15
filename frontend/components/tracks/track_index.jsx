@@ -11,17 +11,32 @@ class TrackIndex extends React.Component {
     let tracks = this.props.tracks.map(track => (
       <TrackIndexItem track={track} key={track.id} />
     ));
-    return (
-      <>
-        <SessionButtonContainer />
-        <div className="index-container">
-          <div className="index-button">
-            <div>Overview</div>
+
+    if (this.props.match.params.userId) {
+      return (
+        <>
+          <SessionButtonContainer />
+          <div className="index-container">
+            <div className="index-button">
+              <div>{this.props.match.params.userId}</div>
+            </div>
+            <div className="inner-index-container">{tracks}</div>
           </div>
-          <div className="inner-index-container">{tracks}</div>
-        </div>
-      </>
-    );
+        </>
+      );
+    } else {
+      return (
+        <>
+          <SessionButtonContainer />
+          <div className="index-container">
+            <div className="index-button">
+              <div>Overview</div>
+            </div>
+            <div className="inner-index-container">{tracks}</div>
+          </div>
+        </>
+      );
+    }
   }
 }
 

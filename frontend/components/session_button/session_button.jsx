@@ -22,32 +22,42 @@ const SessionButton = ({ currentUser, logout, openModal, login, history }) => {
       </button>
     </div>
   );
-  const afterSessionLinks = () => (
-    <div className="after_main_header">
-      <div className="after_session_bar">
-        <img src="sc_logo.png" alt="soundcloud" className="sc_logo" />
-        <div className="rightNav">
-          <Link to="#">
-            <i className="fa fa-github" aria-hidden="true" />
+  const afterSessionLinks = () => {
+    return (
+      <div className="after_main_header">
+        <div className="after_session_bar">
+          <Link to="/tracks">
+            <img src="clown_logo4.png" alt="cloudsound" className="sc_logo" />
           </Link>
-          <Link
-            to="/upload"
-            component={NewTrackFormContainer}
-            className="linkclass"
-          >
-            <p className="uploadbutton">Upload</p>
-          </Link>
-          <hgroup className="header-group">
-            <i
-              onClick={logout}
-              className="fa fa-ellipsis-h logoutdot"
-              aria-hidden="true"
-            />
-          </hgroup>
+          <div className="rightNav">
+            <a
+              href="https://github.com/nurinuriprettynuri/soundcloud"
+              target="_blank"
+            >
+              <i className="fa fa-github" aria-hidden="true" />
+            </a>
+            <Link
+              to="/upload"
+              component={NewTrackFormContainer}
+              className="linkclass"
+            >
+              <p className="uploadbutton">Upload</p>
+            </Link>
+            <Link to={`/${currentUser.username}/tracks`} className="linkclass">
+              <p className="uploadbutton">{currentUser.username}</p>
+            </Link>
+            <hgroup className="header-group">
+              <i
+                onClick={logout}
+                className="fa fa-ellipsis-h logoutdot uploadbutton"
+                aria-hidden="true"
+              />
+            </hgroup>
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  };
 
   return currentUser ? afterSessionLinks() : beforeSessionLinks();
 };

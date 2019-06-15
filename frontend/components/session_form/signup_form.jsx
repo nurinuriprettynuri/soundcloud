@@ -28,9 +28,11 @@ class SignupForm extends React.Component {
 
   renderErrors() {
     return (
-      <ul>
+      <ul className="sessionerror">
         {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>{error}</li>
+          <li className="sessionerror-li" key={`error-${i}`}>
+            {error}
+          </li>
         ))}
       </ul>
     );
@@ -38,10 +40,15 @@ class SignupForm extends React.Component {
 
   render() {
     return (
-      <div className="modal-form-container">
-        <form onSubmit={this.handleSubmit}>
-          {this.renderErrors()}
-          <div>
+      <div className="signup-modal-form-container">
+        <div className="sessionTitleDiv">
+          <p className="sessionFormTitle">Join SoundClown</p>
+        </div>
+        <div className="form-div">
+          <form className="sessionForm" onSubmit={this.handleSubmit}>
+            {this.renderErrors()}
+            <br />
+            <br />
             <br />
             <input
               className="textInput"
@@ -75,13 +82,9 @@ class SignupForm extends React.Component {
               placeholder="Your Password"
             />
             <br />
-            <input
-              type="submit"
-              value={this.props.formType}
-              className="submitButton"
-            />
-          </div>
-        </form>
+            <input type="submit" value="SIGN UP" className="submitButton" />
+          </form>
+        </div>
       </div>
     );
   }

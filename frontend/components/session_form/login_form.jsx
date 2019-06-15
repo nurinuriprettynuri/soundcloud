@@ -36,9 +36,11 @@ class LoginForm extends React.Component {
 
   renderErrors() {
     return (
-      <ul>
+      <ul className="sessionerror">
         {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>{error}</li>
+          <li className="sessionerror-li" key={`error-${i}`}>
+            {error}
+          </li>
         ))}
       </ul>
     );
@@ -46,10 +48,16 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div className="modal-form-container">
-        <form onSubmit={this.handleSubmit}>
-          {this.renderErrors()}
-          <div>
+      <div className="signin-modal-form-container">
+        <div className="sessionTitleDiv">
+          <p className="sessionFormTitle">Welcome back</p>
+        </div>
+        <div className="form-div">
+          <form className="sessionForm" onSubmit={this.handleSubmit}>
+            {this.renderErrors()}
+            <br />
+            <br />
+            <br />
             <br />
             <input
               type="text"
@@ -67,13 +75,9 @@ class LoginForm extends React.Component {
               placeholder="Your password"
             />
             <br />
-            <input
-              type="submit"
-              className="submitButton"
-              value={this.props.formType}
-            />
-          </div>
-        </form>
+            <input type="submit" className="submitButton" value="SIGN IN" />
+          </form>
+        </div>
       </div>
     );
   }

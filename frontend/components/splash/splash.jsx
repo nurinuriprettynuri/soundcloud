@@ -20,9 +20,9 @@ export default class Splash extends React.Component {
           <SessionButtonContainer />
         </div>
         <div className="before_session_main">
-          <div className="front_title">Discover more with SoundCloud Go+</div>
+          <div className="front_title">Discover more with SoundClown Go+</div>
           <div className="front_semi_title">
-            SoundCloud Go+ lets you listen offline, add-freemem, with over 150
+            SoundClown Go+ lets you listen offline, add-freemem, with over 150
             <br />
             million tracks - and growsing.
           </div>

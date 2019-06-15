@@ -27,6 +27,11 @@ const App = () => (
         component={TrackEditContainer}
       />
       <ProtectedRoute exact path="/tracks" component={TrackIndexContainer} />
+      <ProtectedRoute
+        exact
+        path="/:userId/tracks"
+        component={TrackIndexContainer}
+      />
       <AuthRoute exact path="/" component={SplashContainer} />
       <Redirect from="/:sth" to="/" />
     </Switch>

@@ -1,10 +1,21 @@
 .before_main_header {
-  height: 500px;
+  height: 700px;
   background-image: image-url("sc_main.png");
   width: 90%;
   margin: 0 auto;
   // display: flex;
   // justify-content: center;
+}
+
+.sessionerror {
+  width: 100%;
+  margin-left: 41px;
+}
+
+.sessionerror-li {
+  font-family: Arial, Helvetica, sans-serif;
+  color: lightgray;
+  font-size: 13px;
 }
 
 .after_main_header {
@@ -13,39 +24,100 @@
   background-color: #333;
 }
 
-.modal-form-container {
+.form-div {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.signin-modal-form-container {
   background-color: white;
   margin: 0 auto; /* 15% from the top and centered */
   padding: 20px;
-  border: 1px solid rgb(243, 219, 219);
-  width: 400px; /* Could be more or less, depending on screen size */
-  height: 400px;
+
+  width: 300px; /* Could be more or less, depending on screen size */
+  height: 340px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
+}
+
+.signup-modal-form-container {
+  background-color: white;
+  margin: 0 auto; /* 15% from the top and centered */
+  padding: 20px;
+
+  width: 300px; /* Could be more or less, depending on screen size */
+  height: 430px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
 .textInput {
   display: flex;
-  width: 96%;
-  height: 30px;
+  width: 250px;
+  height: 20px;
   margin-right: 5px;
   margin: 2px auto;
   border-radius: 4px;
-  font-size: 20px;
+  font-size: 17px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   padding: 5px;
+  box-shadow: none;
+}
+
+.sessionForm {
+  position: relative;
+  top: 90px;
+}
+
+.sessionFormTitle {
+  font-size: 26px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  width: 100%;
+  // height: 100%;
+  margin: 0 auto;
+  top: 20px;
+  color: white;
+  margin-top: 15px;
+}
+
+.sessionTitleDiv {
+  background-color: #ff5500;
+  border: 2px;
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  height: 62px;
+  border-color: #ff5500;
+  display: flex;
+  text-align: center;
 }
 
 .submitButton {
-  width: 100%;
+  display: flex;
+  padding: 5px;
+  text-align: center;
+  width: 265px;
   height: 40px;
-  margin: 2px auto;
+  margin: 0px auto;
   background-color: #ff5500;
   border-radius: 4px;
-  font-size: 20px;
+  border-color: #ff5500;
+  font-size: 17px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: white;
+  margin-top: 10px;
+  text-align: center;
+  // line-height: 65px;
 }
 
 .before_session_bar {
@@ -75,9 +147,8 @@
 }
 
 .sc_logo {
-  width: 65px;
-  height: 40px;
-  margin: 6px;
+  width: 48px;
+  height: 38px;
 }
 
 .signupButton,
