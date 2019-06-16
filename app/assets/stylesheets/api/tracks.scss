@@ -8,6 +8,10 @@
   height: 180px;
   margin: 1px 15px;
   transition: transform 0.2s;
+  cursor: pointer;
+}
+
+.track_img:hover {
 }
 
 .track_show_img {
@@ -238,9 +242,32 @@ label {
 
 .track_index {
   display: flex;
+  position: relative;
   flex-direction: column;
   a {
     margin-bottom: 1px;
+  }
+  .playButton {
+    display: none;
+  }
+}
+
+.track_index:hover {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  a {
+    margin-bottom: 1px;
+  }
+  .playButton {
+    display: block;
+    position: absolute;
+    top: 60px;
+    left: 75px;
+    object-fit: cover;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
   }
 }
 

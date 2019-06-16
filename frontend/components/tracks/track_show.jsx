@@ -20,18 +20,10 @@ class TrackShow extends React.Component {
       );
   }
 
-  // buttonClass() {
-  //   const { isPlaying, song, currentSong } = this.props;
-  //   if (isPlaying && song === currentSong) {
-  //     return "pause-button-img"
-  //   } else {
-  //     return "play-button-img"
-  //   }
-  // }
-
   handlePlayPause(e) {
     e.preventDefault();
     this.props.playTrack(this.props.track);
+    console.log(this.props.track);
   }
 
   render() {

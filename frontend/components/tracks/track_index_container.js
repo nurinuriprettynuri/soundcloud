@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import { fetchAllTracks } from "../../actions/track_actions";
+import { playTrack } from "../../actions/playbar_action";
 import TrackIndex from "./track_index";
 
 const mapStateToProps = (state, ownProps) => {
@@ -17,13 +18,15 @@ const mapStateToProps = (state, ownProps) => {
     };
   } else {
     return {
+      playbarState: state.ui.playbar,
       tracks: Object.values(state.entities.tracks)
     };
   }
 };
 
 const mapDispatchToProps = dispatch => ({
-  fetchAllTracks: () => dispatch(fetchAllTracks())
+  fetchAllTracks: () => dispatch(fetchAllTracks()),
+  playTrack: track => dispatch(playTrack(track))
 });
 
 export default connect(

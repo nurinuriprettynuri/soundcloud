@@ -3,8 +3,13 @@
   background-image: image-url("sc_main.png");
   width: 90%;
   margin: 0 auto;
-  // display: flex;
-  // justify-content: center;
+}
+
+.before_main_bottom {
+  height: 300px;
+  width: 90%;
+  margin: 0 auto;
+  background-color: #fff;
 }
 
 .sessionerror {
@@ -116,8 +121,6 @@
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   color: white;
   margin-top: 10px;
-  text-align: center;
-  // line-height: 65px;
 }
 
 .before_session_bar {

@@ -21,8 +21,6 @@ export default (state = defaultState, action) => {
   switch (action.type) {
     case PLAY_TRACK:
       const { currentTrack, isPlaying } = state;
-      console.log(action.track, currentTrack, isPlaying);
-
       if (!currentTrack || currentTrack.id != action.track.id) {
         audio[0].setAttribute("src", action.track.audioUrl);
         audio[0].play();

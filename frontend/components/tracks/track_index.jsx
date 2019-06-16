@@ -9,7 +9,13 @@ class TrackIndex extends React.Component {
 
   render() {
     let tracks = this.props.tracks.map(track => (
-      <TrackIndexItem track={track} key={track.id} />
+      <TrackIndexItem
+        track={track}
+        key={track.id}
+        playbarState={this.props.playbarState}
+        fetchTrack={this.props.fetchTrack}
+        playTrack={this.props.playTrack}
+      />
     ));
 
     if (this.props.match.params.userId) {
