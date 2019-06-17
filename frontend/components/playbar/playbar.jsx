@@ -14,13 +14,17 @@ export default class Playbar extends React.Component {
         return <i className="fa fa-pause" aria-hidden="true" />;
       }
     };
+
+    let playTrack = this.props.currentTrack
+      ? () => this.props.playTrack(this.props.currentTrack)
+      : () => {};
     return (
       <div className="playbar-container">
         <div id="playbar">
           <i
             className="fa fa-step-backward"
             aria-hidden="true"
-            // onClick={this.props.playTrack(this.props.currentTrack)}
+            onClick={playTrack}
           />
           {playpause()}
           <i className="fa fa-step-forward" aria-hidden="true" />
