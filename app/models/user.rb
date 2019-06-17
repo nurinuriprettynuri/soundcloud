@@ -10,7 +10,11 @@ class User < ApplicationRecord
 
     has_many :tracks,
         foreign_key: :artist_id,
-        class_name: :Track    
+        class_name: :Track   
+        
+    has_many :comments,
+        foreign_key: :user_id,
+        class_name: :Comment
     
     has_one_attached :image
 
