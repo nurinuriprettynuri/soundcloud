@@ -1,6 +1,8 @@
 import React from "react";
 import SessionButtonContainer from "../session_button/session_button_container";
 import { Link } from "react-router-dom";
+import NewCommentFormContainer from "../comments/new_comment_form_container";
+import CommentIndexItem from "../comments/comment_index_item";
 
 class TrackShow extends React.Component {
   constructor(props) {
@@ -23,7 +25,6 @@ class TrackShow extends React.Component {
   handlePlayPause(e) {
     e.preventDefault();
     this.props.playTrack(this.props.track);
-    console.log(this.props.track);
   }
 
   render() {
@@ -47,7 +48,9 @@ class TrackShow extends React.Component {
       ) : (
         <img src={window.playbuttonurl} />
       );
-
+    let comments = this.props.comments.map(comment => (
+      <CommentIndexItem comment={comment} />
+    ));
     return (
       <>
         <SessionButtonContainer />
@@ -94,6 +97,11 @@ class TrackShow extends React.Component {
                 More
               </button>
             </Link>
+          </div>
+
+          <div className="commentDiv">
+            {comments}
+            <NewCommentFormContainer trackId={this.props.track.id} />
           </div>
         </div>
       </>

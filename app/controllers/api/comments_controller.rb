@@ -7,7 +7,7 @@ class Api::CommentsController < ApplicationController
     def create
         @comment = Comment.new(comment_params)
         if @comment.save
-            render "api/comments/index"
+            render "api/comments/show"
         else
             render json: @comment.errors.full_messages, status: 422
         end 
@@ -21,6 +21,8 @@ class Api::CommentsController < ApplicationController
 
     private
     def comment_params
+        p params
+        p "here?"
         params.require(:comment).permit(:body, :user_id, :track_id)
     end
 end

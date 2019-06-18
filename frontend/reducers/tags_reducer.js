@@ -8,7 +8,7 @@ const tagReducer = (state = {}, action) => {
     case RECEIVE_ALL_TAGS:
       return action.tags;
     case RECEIVE_TAG:
-      return merge({}, state, action.tag);
+      return merge({}, state, { [action.comment.id]: action.comment });
     default:
       return state;
   }

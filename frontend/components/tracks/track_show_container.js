@@ -11,11 +11,12 @@ const mapStateToProps = (state, ownProps) => {
   } else {
     artist = state.entities.users[showTrack.artist_id];
   }
-  // console.log(showTrack);
+  console.log(state.entities.comments);
   return {
     track: showTrack,
     artist: artist,
-    playbarState: state.ui.playbar
+    playbarState: state.ui.playbar,
+    comments: Object.values(state.entities.comments)
   };
 };
 
