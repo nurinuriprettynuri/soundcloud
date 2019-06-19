@@ -24,18 +24,20 @@ class CommentForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="new-comment-div">
+        <img src={this.props.userImage.imageUrl} className="comment-img" />
         <form onSubmit={this.handleSubmit}>
           {this.state.username}
-          <label>
+          <div className="comment_div">
             <input
+              className="comment-input"
               type="text"
               value={this.state.body}
               onChange={this.update()}
             />
-          </label>
-          <input type="submit" value="add comment" />
+          </div>
         </form>
+        <input type="submit" value="add" />
       </div>
     );
   }

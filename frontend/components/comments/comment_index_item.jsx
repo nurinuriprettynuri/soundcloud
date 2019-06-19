@@ -7,11 +7,25 @@ class CommentIndexItem extends React.Component {
 
   render() {
     return (
-      <>
-        <p>{this.props.comment.username}</p>
-        <p>{this.props.comment.body}</p>
-        <button>Delete</button>
-      </>
+      <div className="comment-item-div">
+        <div>
+          <div className="comment-item-set">
+            <div className="comment-item-name">
+              {this.props.comment.username}
+            </div>
+            <div className="comment-item-body">{this.props.comment.body}</div>
+          </div>
+        </div>
+        <div>
+          <div className="comment-item-button">
+            <button
+              onClick={() => this.props.deleteComment(this.props.comment.id)}
+            >
+              Delete
+            </button>
+          </div>
+        </div>
+      </div>
     );
   }
 }

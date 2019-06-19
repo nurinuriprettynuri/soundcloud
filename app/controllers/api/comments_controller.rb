@@ -16,13 +16,11 @@ class Api::CommentsController < ApplicationController
     def destroy
         @comment = Comment.find(params[:id])
         @comment.destroy
-        render 'api/comments/index'
+        render 'api/comments/show'
     end
 
     private
     def comment_params
-        p params
-        p "here?"
         params.require(:comment).permit(:body, :user_id, :track_id)
     end
 end

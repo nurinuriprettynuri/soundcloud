@@ -1,3 +1,143 @@
 // Place all the styles related to the api/comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.comment-img {
+  width: 40px;
+  height: 40px;
+  border: none;
+}
+
+.new-comment-div {
+  display: grid;
+  grid-template-columns: 40px auto 40px;
+  width: 100%;
+  height: 40px;
+}
+
+.comment_div {
+  padding: 5px;
+  box-sizing: border-box;
+  border: 1px solid #e5e5e5;
+  background-color: #f2f2f2;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.comment-item-set {
+  display: flex;
+}
+
+.comment-item-div {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  margin-bottom: 4px;
+}
+
+.comment-item-name {
+  display: inline-block;
+  font-family: Helvetica, sans-serif;
+  color: #999999;
+}
+
+.comment-wrapper {
+  display: flex;
+}
+
+.comment-input {
+  width: 100%;
+  vertical-align: middle;
+  height: 20px;
+  padding: 0 9px;
+  box-sizing: border-box;
+  top: 3px;
+}
+
+.comment-left {
+  height: 200px;
+  overflow: auto;
+}
+
+.comment-left::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+.comment-left::-webkit-scrollbar:vertical {
+  width: 11px;
+}
+
+.comment-left::-webkit-scrollbar:horizontal {
+  height: 11px;
+}
+
+.comment-left::-webkit-scrollbar-thumb {
+  border: 2px solid white;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.show-bottom {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.comment-section {
+  margin-bottom: 200px;
+  padding: 0 20px;
+  width: 100%;
+}
+
+.show-buttom-ld {
+  padding-top: 20px;
+  display: flex;
+  width: 100%;
+}
+
+.show-buttom-left {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  form {
+    width: 100%;
+  }
+}
+
+.profile {
+  padding: 0 20px;
+}
+
+.profile-info {
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.show-buttom-lt {
+  height: 40px;
+  margin-bottom: 20px;
+  width: 100%;
+  //   margin-left: 20px;
+  box-sizing: border-box;
+  padding: 0 10px;
+}
+
+.comment-item-body {
+  margin: 0 40px;
+}
+
+.show-buttom-right {
+  width: 30%;
+  padding-left: 20px;
+}
+
+.comment-item-body {
+  font-family: Helvetica, sans-serif;
+}

@@ -8,7 +8,8 @@ const mapStateToProps = (state, ownProps) => {
       body: "",
       track_id: ownProps.trackId,
       user_id: state.session.id
-    }
+    },
+    userImage: state.entities.users[state.session.id]
   };
 };
 

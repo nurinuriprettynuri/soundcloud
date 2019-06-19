@@ -1,4 +1,5 @@
-json.extract! track, :id, :artist_id, :title, :tag
+json.extract! track, :id, :artist_id, :title, :tag, :artist
+
 
 if track.image.attached?
     json.imageUrl url_for(track.image) 

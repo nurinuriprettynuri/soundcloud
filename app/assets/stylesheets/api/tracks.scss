@@ -105,11 +105,10 @@ label {
 .index-container {
   max-width: 1240px;
   background-color: white;
-  padding: 50px 25px 75px 25px;
+  padding: 70px 25px 75px 25px;
   margin: 0 auto;
   width: 90%;
   box-sizing: border-box;
-  min-height: 100vh;
 }
 
 .form-type {
@@ -131,14 +130,12 @@ label {
   width: 90%;
   box-sizing: border-box;
   min-height: 100vh;
+  padding-top: 46px;
 }
 
 .main-div {
   width: 100%;
   background-color: #f2f2f2;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 .track-show-div {
@@ -164,6 +161,7 @@ label {
   width: 100%;
   padding-left: 20px;
   padding-right: 20px;
+  padding-bottom: 50px;
   display: flex;
   // justify-content: space-between;
   flex-wrap: wrap;
@@ -320,7 +318,8 @@ label {
 
 .track_show_menu {
   padding: 5px;
-  height: 40px;
+  height: 15px;
+  margin-bottom: 15px;
 }
 
 .show_menu_ic {
@@ -351,4 +350,51 @@ label {
 .fa-github {
   color: white;
   font-size: 28px !important;
+}
+
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+.comment-section {
+  width: 50;
+}
+
+.related-tracks {
+  display: flex;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: #999999;
+}
+
+.related-index-item {
+  display: flex;
+  height: 50px;
+}
+
+.related-index-des {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+  // align-items: center;
+  padding-top: 10px;
+  box-sizing: border-box;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.rel-img {
+  width: 50px;
+  height: 50px;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.related-tracks-list {
+  margin-top: 20px;
 }
