@@ -2,6 +2,7 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 import SessionButtonContainer from "../session_button/session_button_container";
 import TrackIndexItem from "../tracks/track_index_item";
+import { Link } from "react-router-dom";
 
 export default class Splash extends React.Component {
   componentDidMount() {
@@ -33,7 +34,7 @@ export default class Splash extends React.Component {
       <div>
         <div className="before_main_header">
           <div className="before_session_bar">
-            <img src="sc_logo.png" alt="soundcloud" className="sc_logo" />
+            <img src="clown_logo4.png" alt="soundcloud" className="sc_logo" />
             <SessionButtonContainer />
           </div>
           <div className="before_session_main">
@@ -56,12 +57,42 @@ export default class Splash extends React.Component {
         <div className="before_main_bottom">
           <div className="index-container">
             <br />
-            <p>Hear what’s trending for free in the SoundClown community</p>
+            <div className="splashDes">
+              Hear what’s trending for free in the SoundClown community
+            </div>
             <br />
             <br />
             <br />
             <div>
               <div className="inner-index-container">{splash_musics}</div>
+              <div className="logo-div">
+                <a
+                  href="https://github.com/nurinuriprettynuri/soundcloud"
+                  target="_blank"
+                >
+                  <img src="github.png" alt="github" className="github-link" />
+                </a>
+                <a href="https://angel.co/nuri-jeon" target="_blank">
+                  <img
+                    src="angellist.png"
+                    alt="angellist"
+                    className="angel-link"
+                  />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/nuri-jeon-4aa947187/"
+                  target="_blank"
+                >
+                  <img
+                    src="linkedin.png"
+                    alt="linkedin"
+                    className="linkedin-link"
+                  />
+                </a>
+                {/* <Link>
+                  <img src="" alt="portfolio" className="personal-links" />
+                </Link> */}
+              </div>
             </div>
           </div>
         </div>

@@ -19,6 +19,7 @@ class CommentIndexItem extends React.Component {
         <div>
           <div className="comment-item-button">
             <button
+              className="comment-del-bt"
               onClick={() => this.props.deleteComment(this.props.comment.id)}
             >
               Delete

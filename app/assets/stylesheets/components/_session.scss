@@ -228,6 +228,8 @@
 
 .buttons {
   top: 60px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 .free_trial_button {
@@ -251,4 +253,106 @@
 .logoutdot {
   font-size: 24px !important;
   color: lightgray;
+}
+
+.rightNav {
+  ul {
+    background: rgb(109, 109, 109);
+    height: 50px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.rightNav {
+  li {
+    float: left;
+    padding: 0px;
+  }
+}
+
+// .rightNav {
+//   a {
+//     background: rgb(109, 109, 109);
+//     color: #cccccc;
+//     display: block;
+//     font-weight: normal;
+//     line-height: 50px;
+//     margin: 0px;
+//     padding: 0px 25px;
+//     text-align: center;
+//     text-decoration: none;
+//   }
+// }
+
+.rightNav i:hover,
+.rightNav ul li:hover a {
+  background: rgb(71, 71, 71);
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.rightNav {
+  a {
+    text-decoration: none;
+  }
+}
+
+.rightNav hgroup ul {
+  background: rgb(109, 109, 109);
+  display: none; /* 평상시에는 드랍메뉴가 안보이게 하기 */
+  height: auto;
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  position: absolute;
+  width: 200px;
+  z-index: 200;
+  /*top:1em;
+/*left:0;*/
+}
+
+.checkthis:hover ul {
+  display: block;
+}
+
+.rightNav hgroup li {
+  background: rgb(109, 109, 109);
+  display: block;
+  float: none;
+  margin: 0px;
+  padding: 0px;
+  width: 200px;
+}
+
+.checkthis:hover li a {
+  background: none;
+}
+
+.logoutbutton {
+  height: 100%;
+  display: inline-block;
+}
+
+.rightNav hgroup li a {
+  display: block;
+  height: 50px;
+  font-size: 12px;
+  font-style: normal;
+  margin: 0px;
+  padding: 0px 10px 0px 15px;
+  text-align: left;
+}
+
+.rightNav hgroup ul a:hover,
+.rightNav hgroup ul li:hover a {
+  background: rgb(71, 71, 71);
+  border: 0px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.rightNav hgroup ul {
+  margin-top: 12px;
 }

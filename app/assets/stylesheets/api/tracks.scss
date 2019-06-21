@@ -139,7 +139,7 @@ label {
 }
 
 .track-show-div {
-  // padding: 10px;
+  padding-right: 10px;
 
   display: flex;
   width: 100%;
@@ -149,10 +149,27 @@ label {
 }
 
 .track-show-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 18px;
+  // position: relative;
+}
+
+.heyhr {
+  // border-top: 0.5x solid red;
+  border-width: 1.2px;
+}
+
+.heyhr2 {
+  border-width: 0.9px;
+}
+
+.non-menu {
   width: 820px;
   display: flex;
   // padding: 10px;
-  position: relative;
+  // position: absolute;
   left: 10px;
 }
 
@@ -290,9 +307,20 @@ label {
   color: lightgray;
 }
 
+.logoutbutton {
+  color: lightgray;
+  // width: 120px;
+
+  display: flex;
+  justify-content: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
 .uploadbutton {
   color: lightgray;
-  width: 100px;
+  // width: 120px;
+  margin-right: 20px;
   display: flex;
   justify-content: center;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
@@ -316,10 +344,26 @@ label {
   color: white;
 }
 
+.comment-div-div {
+  margin-bottom: 10px;
+}
+
 .track_show_menu {
-  padding: 5px;
+  // padding-left: 10px;
   height: 15px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+  margin-top: 15px;
+  position: relative;
+  bottom: 5px;
+}
+
+.show_menu_btn {
+  margin-right: 5px;
+  border: 1px solid hsl(0, 1%, 85%);
+  border-radius: 7px;
+  width: 80px;
+  height: 27px;
+  font-size: 15px;
 }
 
 .show_menu_ic {
@@ -350,6 +394,7 @@ label {
 .fa-github {
   color: white;
   font-size: 28px !important;
+  margin-right: 22px;
 }
 
 .profile-pic {
@@ -372,6 +417,7 @@ label {
 .related-index-item {
   display: flex;
   height: 50px;
+  margin-bottom: 5px;
 }
 
 .related-index-des {
@@ -397,4 +443,18 @@ label {
 
 .related-tracks-list {
   margin-top: 20px;
+}
+
+.related-index-username {
+  color: #999999;
+  margin-bottom: 2px;
+}
+
+.profile_user {
+  // padding: 0;
+  margin-bottom: 3px;
+}
+
+.profile_user_location {
+  color: #999999;
 }

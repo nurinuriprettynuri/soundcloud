@@ -12,3 +12,14 @@ if track.audio.attached?
 else
     json.audioUrl ''
 end
+
+
+
+
+if track.artist.image.attached?
+    json.aimageUrl url_for(track.artist.image)
+else
+    json.aimageUrl ''
+end
+
+

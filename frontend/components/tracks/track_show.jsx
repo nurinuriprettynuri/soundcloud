@@ -16,11 +16,14 @@ class TrackShow extends React.Component {
   }
 
   componentDidMount() {
-    this.props
-      .fetchTrack(this.props.match.params.trackId)
-      .then(
-        this.setState({ track: this.props.track, artist: this.props.artist })
-      );
+    this.props.fetchAllTracks().then(
+      this.props.fetchTrack(this.props.match.params.trackId).then(
+        this.setState({
+          track: this.props.track,
+          artist: this.props.artist
+        })
+      )
+    );
   }
 
   handlePlayPause(e) {
@@ -49,6 +52,7 @@ class TrackShow extends React.Component {
       ) : (
         <img src={window.playbuttonurl} />
       );
+    console.log(this.props.comments);
     let comments = this.props.comments.map(comment => (
       <CommentIndexItem
         key={comment.id}
@@ -63,72 +67,86 @@ class TrackShow extends React.Component {
       </li>
     ));
 
+    let showpageBtn;
+    if (
+      this.props.track &&
+      this.props.userImage.id === this.props.track.artist.id
+    ) {
+      showpageBtn = (
+        <div className="track_show_menu">
+          <div>
+            <Link to={`/tracks/${this.props.match.params.trackId}/edit`}>
+              <button className="show_menu_btn">
+                <i
+                  className="fa fa-pencil-square-o show_menu_ic"
+                  aria-hidden="true"
+                />
+                Edit
+              </button>
+            </Link>
+            <Link to="#">
+              <button className="show_menu_btn">
+                <i className="fa fa-credit-card" aria-hidden="true" />
+                Delete
+              </button>
+            </Link>
+          </div>
+        </div>
+      );
+    } else {
+      showpageBtn = <></>;
+    }
     return (
       <>
         <SessionButtonContainer />
         <div className="show-container">
           <div className="track-show-div">
             <div className="track-show-left">
-              <div className="play-button-div">
-                <button onClick={this.handlePlayPause} className="play-button">
-                  {button}
-                </button>
-              </div>
-              <div className="track_title">
-                <span className="track_exp username">
-                  <strong>{this.props.artist.username}</strong>
-                </span>
-                <span className="track_exp artist">
-                  {this.props.track.title}
-                </span>
+              <div className="non-menu">
+                <div className="play-button-div">
+                  <button
+                    onClick={this.handlePlayPause}
+                    className="play-button"
+                  >
+                    {button}
+                  </button>
+                </div>
+                <div className="track_title">
+                  <span className="track_exp username">
+                    <strong>{this.props.artist.username}</strong>
+                  </span>
+                  <span className="track_exp artist">
+                    {this.props.track.title}
+                  </span>
+                </div>
               </div>
             </div>
             <div className="track-show-right">
               <img className="track_show_img" src={image} />
             </div>
           </div>
-          <div className="track_show_menu">
-            <div>
-              <Link to="#">
-                <button className="show_menu_btn">
-                  <i className="fa fa-share-square-o" aria-hidden="true" />
-                  Share
-                </button>
-              </Link>
-              <Link to={`/tracks/${this.props.match.params.trackId}/edit`}>
-                <button className="show_menu_btn">
-                  <i
-                    className="fa fa-pencil-square-o show_menu_ic"
-                    aria-hidden="true"
-                  />
-                  Edit
-                </button>
-              </Link>
-              <Link to="#">
-                <button className="show_menu_btn">
-                  <i className="fa fa-credit-card" aria-hidden="true" />
-                  More
-                </button>
-              </Link>
-            </div>
-          </div>
+
           <div className="show-bottom">
             <div className="show-buttom-left">
               <div className="show-buttom-lt">
-                <div className="">
+                <div className="comment-div-div">
                   <NewCommentFormContainer trackId={this.props.track.id} />
                 </div>
+                {showpageBtn}
               </div>
               <div className="show-buttom-ld">
                 <div className="profile">
                   <img
-                    src={this.props.userImage.imageUrl}
+                    src={this.props.track.aimageUrl}
                     className="profile-pic"
                   />
                   <div className="profile-info">
-                    {this.props.userImage.username}
-                    <br />
-                    {this.props.userImage.location}
+                    <div className="profile_user">
+                      {this.props.track.artist.username}
+                    </div>
+                    <div className="profile_user_location">
+                      {this.props.track.artist.location}
+                    </div>
                   </div>
                 </div>
                 <div className="comment-section">
@@ -138,6 +156,7 @@ class TrackShow extends React.Component {
             </div>
             <div className="show-buttom-right">
               <div className="related-tracks">Related Tracks</div>
+              <hr className="heyhr" />
               <div className="related-tracks-list">
                 <ul>{relatedtrack}</ul>
               </div>

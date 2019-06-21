@@ -7,7 +7,9 @@ const RelatedTrackItem = props => {
         <img src={props.track.imageUrl} />
       </div>
       <div className="related-index-des">
-        <div>{props.track.artist.username}</div>
+        <div className="related-index-username">
+          {props.track.artist.username}
+        </div>
         <div>{props.track.title}</div>
       </div>
     </div>

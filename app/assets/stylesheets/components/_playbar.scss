@@ -5,6 +5,8 @@
   border: 1px cecece solid;
   height: 50px;
   bottom: 0;
+  display: flex;
+  justify-content: center;
 }
 .react-audio-player {
   display: none;
@@ -12,6 +14,7 @@
 
 #playbar {
   padding: 16px 20px 12px;
+  display: flex;
 }
 
 .fa {
@@ -23,4 +26,25 @@
   width: 50px;
   height: 50px;
   background-color: red;
+}
+
+#progressBar {
+  color: #fff;
+  width: 80%;
+  height: 8px;
+  z-index: 3;
+  margin: 0 10px;
+}
+
+#progress {
+  background-color: #444444;
+  height: 8px;
+  display: inline-block;
+  z-index: 2;
+}
+
+.progress-div {
+  display: flex;
+  padding-left: 40px;
+  width: 500px;
 }

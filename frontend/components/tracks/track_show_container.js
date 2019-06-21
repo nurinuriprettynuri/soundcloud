@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { fetchTrack } from "../../actions/track_actions";
+import { fetchTrack, fetchAllTracks } from "../../actions/track_actions";
 import TrackShow from "./track_show";
 import { playTrack } from "../../actions/playbar_action";
 import { deleteComment } from "../../actions/comment_actions";
@@ -15,7 +15,7 @@ const mapStateToProps = (state, ownProps) => {
   }
 
   Object.values(state.entities.tracks).forEach(track => {
-    if (track.tag.title === showTrack.tag.title) {
+    if (track.tag.title === showTrack.tag.title && track.id !== showTrack.id) {
       relatedTrack.push(track);
     }
   });
@@ -31,6 +31,7 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = dispatch => ({
+  fetchAllTracks: () => dispatch(fetchAllTracks()),
   fetchTrack: id => dispatch(fetchTrack(id)),
   playTrack: track => dispatch(playTrack(track)),
   deleteComment: comment => dispatch(deleteComment(comment))

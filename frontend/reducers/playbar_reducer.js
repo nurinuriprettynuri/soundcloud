@@ -24,10 +24,18 @@ export default (state = defaultState, action) => {
       if (!currentTrack || currentTrack.id != action.track.id) {
         audio[0].setAttribute("src", action.track.audioUrl);
         audio[0].play();
+        audio[0].onloadedmetadata = function() {
+          let durationEl = document.getElementById("song-duration");
+          let minutes = Math.floor(audio[0].duration / 60);
+          let seconds = Math.floor(audio[0].duration % 60);
+          durationEl.innerText = `${minutes}:${
+            seconds < 10 ? "0" : ""
+          }${seconds}`;
+        };
         return merge(
           {},
           state,
-          { currentTrack: action.track },
+          { currentTrack: action.track, trackDuration: audio[0].duration },
           { isPlaying: true }
         );
       } else if (currentTrack && currentTrack.id === action.track.id) {

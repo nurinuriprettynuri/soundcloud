@@ -47,11 +47,18 @@ const SessionButton = ({ currentUser, logout, openModal, login, history }) => {
               <p className="uploadbutton">{currentUser.username}</p>
             </Link>
             <hgroup className="header-group">
-              <i
-                onClick={logout}
-                className="fa fa-ellipsis-h logoutdot uploadbutton"
-                aria-hidden="true"
-              />
+              <div className="checkthis">
+                <i
+                  onClick={logout}
+                  className="fa fa-ellipsis-h logoutdot logoutbutton"
+                  aria-hidden="true"
+                />
+                <ul className="logout-ul">
+                  <li>
+                    <a href="#">log out</a>
+                  </li>
+                </ul>
+              </div>
             </hgroup>
           </div>
         </div>
