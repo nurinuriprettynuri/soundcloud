@@ -7,8 +7,18 @@ json.artist do
     json.extract! @track.artist, :id, :username, :email
 end
 
-json.comments(@track.comments) do |comment|
-    json.extract! comment, :id, :body, :track_id
-    json.extract! comment.user, :username
+if @track.comments.length > 0
+    puts "ekekekekeke"
+    json.comments do 
+        @track.comments.each do |comment|
+            json.set! comment.id do
+                json.extract! comment, :id, :body, :track_id
+                json.extract! comment.user, :username
+            end
+        end
+    end
+else
+    puts "kekeke"
+    json.comments({})
 end
 

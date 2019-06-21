@@ -11,14 +11,14 @@ export const receiveAllComments = comments => ({
   comments
 });
 
-export const receiveComment = comment => ({
-  type: RECEIVE_COMMENT,
-  comment
-});
+export const receiveComment = comment => {
+  console.log(comment);
+  return { type: RECEIVE_COMMENT, comment };
+};
 
 export const removeComment = comment => ({
   type: REMOVE_COMMENT,
-  commentId: comment.id
+  comment: comment
 });
 
 export const receiveErrors = errors => ({
@@ -50,6 +50,6 @@ export const createComment = comment => dispatch =>
 
 export const deleteComment = id => dispatch =>
   APIUtil.deleteComment(id).then(
-    comment => dispatch(removeComment(id)),
+    comment => dispatch(removeComment(comment)),
     err => dispatch(receiveErrors(err.responseJSON))
   );

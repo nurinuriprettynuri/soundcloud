@@ -12,12 +12,13 @@ const commentReducer = (state = {}, action) => {
   let newState;
   switch (action.type) {
     case RECEIVE_ALL_COMMENTS:
+      console.log(action.comments);
       return action.comments;
     case RECEIVE_COMMENT:
-      return merge({}, state, { [action.comment.id]: action.comment });
+      return merge({}, state, action.comment);
     case REMOVE_COMMENT:
       newState = merge({}, state);
-      delete newState[action.commentId];
+      delete newState[action.comment.id];
       return newState;
     case RECEIVE_TRACK:
       return action.comments;

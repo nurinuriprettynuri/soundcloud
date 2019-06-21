@@ -19,7 +19,7 @@ const mapStateToProps = (state, ownProps) => {
       relatedTrack.push(track);
     }
   });
-
+  console.log(state.entities.comments);
   return {
     track: showTrack,
     artist: artist,
