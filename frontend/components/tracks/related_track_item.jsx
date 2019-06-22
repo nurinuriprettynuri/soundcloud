@@ -11,7 +11,7 @@ const RelatedTrackItem = props => {
         <div className="related-index-username">
           {props.track.artist.username}
         </div>
-        <Link to={`/tracks/${props.track.id}`}>
+        <Link to={`/tracks/${props.track.id}`} className="track_link">
           <div>{props.track.title}</div>
         </Link>
       </div>
