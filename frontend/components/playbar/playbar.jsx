@@ -4,6 +4,7 @@ import ReactAudioPlayer from "react-audio-player";
 export default class Playbar extends React.Component {
   constructor(props) {
     super(props);
+    this.musicPlay = this.musicPlay.bind(this);
   }
 
   componentDidMount() {
@@ -25,12 +26,30 @@ export default class Playbar extends React.Component {
     progress.style.width = value + "%";
   }
 
+  musicPlay() {
+    if (this.props.currentTrack) {
+      this.props.playTrack(this.props.currentTrack);
+    }
+  }
+
   render() {
     let playpause = () => {
       if (this.props.isPlaying === false) {
-        return <i className="fa fa-play" aria-hidden="true" />;
+        return (
+          <i
+            className="fa fa-play"
+            aria-hidden="true"
+            onClick={this.musicPlay}
+          />
+        );
       } else {
-        return <i className="fa fa-pause" aria-hidden="true" />;
+        return (
+          <i
+            className="fa fa-pause"
+            aria-hidden="true"
+            onClick={this.musicPlay}
+          />
+        );
       }
     };
 

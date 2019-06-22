@@ -14,6 +14,7 @@ const mapStateToProps = (state, ownProps) => {
       }
     });
     return {
+      playbarState: state.ui.playbar,
       tracks: tracks
     };
   } else {

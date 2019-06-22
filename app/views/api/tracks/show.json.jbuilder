@@ -8,7 +8,6 @@ json.artist do
 end
 
 if @track.comments.length > 0
-    puts "ekekekekeke"
     json.comments do 
         @track.comments.each do |comment|
             json.set! comment.id do
@@ -18,7 +17,6 @@ if @track.comments.length > 0
         end
     end
 else
-    puts "kekeke"
     json.comments({})
 end
 

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const RelatedTrackItem = props => {
   return (
@@ -10,7 +11,9 @@ const RelatedTrackItem = props => {
         <div className="related-index-username">
           {props.track.artist.username}
         </div>
-        <div>{props.track.title}</div>
+        <Link to={`/tracks/${props.track.id}`}>
+          <div>{props.track.title}</div>
+        </Link>
       </div>
     </div>
   );

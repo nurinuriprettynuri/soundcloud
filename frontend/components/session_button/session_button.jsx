@@ -2,6 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import NewTrackFormContainer from "../tracks/new_track_form_container";
 
+const logoutToggle = () => {
+  console.log("kekek");
+  var element = document.getElementById("logout");
+  element.classList.toggle("logout-ul-after");
+};
+
 const SessionButton = ({ currentUser, logout, openModal, login, history }) => {
   const demoUserLogIn = () => {
     login({ email: "aliglaser@gmail.com", password: "123456789" }).then(() =>
@@ -49,11 +55,11 @@ const SessionButton = ({ currentUser, logout, openModal, login, history }) => {
             <hgroup className="header-group">
               <div className="checkthis">
                 <i
-                  onClick={logout}
+                  onClick={logoutToggle}
                   className="fa fa-ellipsis-h logoutdot logoutbutton"
                   aria-hidden="true"
                 />
-                <ul className="logout-ul">
+                <ul id="logout" class="logout-ul">
                   <li>
                     <a href="#">log out</a>
                   </li>

@@ -299,9 +299,23 @@
   }
 }
 
-.rightNav hgroup ul {
+.logout-ul {
   background: rgb(109, 109, 109);
   display: none; /* 평상시에는 드랍메뉴가 안보이게 하기 */
+  height: auto;
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  position: absolute;
+  width: 200px;
+  z-index: 200;
+  /*top:1em;
+/*left:0;*/
+}
+
+.logout-ul-after {
+  background: rgb(109, 109, 109);
+  display: block; /* 평상시에는 드랍메뉴가 안보이게 하기 */
   height: auto;
   padding: 0px;
   margin: 0px;
