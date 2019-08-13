@@ -1,24 +1,22 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[Live Demo](https://sound-cloud-pj.herokuapp.com)
 
-Things you may want to cover:
+SoundClown is a single-page web application that offers users to stream my favorite songs.The design and functionality is inspired by SoundCloud.
 
-* Ruby version
+## Technologies
 
-* System dependencies
+SoundClown is built using Ruby on Rails and a PostgreSQL database to handle the backend. AWS S3 is used to host the main media files (artist, , and album art as well as song files). React and Redux are used to manage the state of the front end alongside HTML5 and SASS for styling.
 
-* Configuration
 
-* Database creation
 
-* Database initialization
+## Features
 
-* How to run the test suite
+### Global music playbar
 
-* Services (job queues, cache servers, search engines, etc.)
+The goal:
+Add the ability for users to play songs continuously while browsing the site. Allow globally synced play/pause functionality from the playbar, the song's page, and on other pages where the song appears.
 
-* Deployment instructions
+The solution:
+Have a UI slice of state as part of the global Redux state that keeps track of the necessary data that needs to be synced across the app. Pass the relevant parts of that slice of state and relevant actions to other components (such as the song show page) to allow for globally synced playback and control.
 
-* ...
