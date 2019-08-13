@@ -4,6 +4,8 @@
 
 SoundClown is a single-page web application that offers users to stream my favorite songs.The design and functionality is inspired by SoundCloud.
 
+![hey](./image/Screen Recording 2019-08-12 at 11.08.30 PM.mov)
+
 ## Technologies
 
 SoundClown is built using Ruby on Rails and a PostgreSQL database to handle the backend. AWS S3 is used to host the main media files (artist, , and album art as well as song files). React and Redux are used to manage the state of the front end alongside HTML5 and SASS for styling.
