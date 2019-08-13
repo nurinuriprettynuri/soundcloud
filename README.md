@@ -4,7 +4,7 @@
 
 SoundClown is a single-page web application that offers users to stream my favorite songs.The design and functionality is inspired by SoundCloud.
 
-![hey](./image/Screen Recording 2019-08-12 at 11.08.30 PM.mov)
+![hey](./image/soundcloud.gif)
 
 ## Technologies
 
